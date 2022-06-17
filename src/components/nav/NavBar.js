@@ -6,7 +6,13 @@ export const NavBar = () => {
   const history = useHistory()
   return (
     <nav>
-      <Link to="/">Home</Link>
+      <div className="navItems">
+      <Link to="/musician-dashboard">DASHBOARD</Link>
+      <Link to="/artist-list">ARTISTS</Link>
+      <Link to="/gig-list">GIGS</Link>
+      
+      
+
       {
         localStorage.getItem("auth_token") !== null ?
           <button onClick={() => {
@@ -14,13 +20,14 @@ export const NavBar = () => {
             history.push({ pathname: "/" })
           }}>
             Logout
-          </button>
+          </button> 
           :
           <>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
           </>
       }
+      </div>
     </nav>
   )
 }

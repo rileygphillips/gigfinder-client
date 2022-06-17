@@ -21,3 +21,18 @@ export const loginUser = (user) => {
   })
     .then(res => res.json())
 }
+
+export const getAllInstruments = () => {
+  return fetch("http://localhost:8000/instruments")
+  .then(res => res.json())
+}
+
+export const getAllGenres = () => {
+  return fetch("http://localhost:8000/genres")
+  .then(res => res.json())
+}
+
+export const getAllSkillLevels = () => {
+  return fetch("http://localhost:8000/skill_levels")
+  .then(res => res.json())
+}
