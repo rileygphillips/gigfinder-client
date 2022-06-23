@@ -1,6 +1,5 @@
 import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom"
-import Header from "../../LoginLogo"
 import "./Auth.css"
 import { loginUser } from "./AuthManager"
 
@@ -19,9 +18,10 @@ export const Login = () => {
 
     loginUser(user)
       .then(res => {
-        if ("valid" in res && res.valid && "token" in res) {
+        if ("valid" in res && res.valid && "token" in res) { 
           localStorage.setItem("auth_token", res.token)
-          history.push("/")
+          localStorage.setItem("is_artist", res.is_artist)
+          res.is_artist === true ? history.push("/artist-dashboard") : history.push("/musician-dashboard")
         }
         else {
           invalidDialog.current.showModal()
@@ -31,7 +31,6 @@ export const Login = () => {
 
   return (
     <main >
-       <div className="header"><Header /> </div>
       <div className="loginHeader">
 {/* <!--Content before waves--> */}
         
@@ -71,7 +70,7 @@ export const Login = () => {
         <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,66,66,0.7)" />
         <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
         <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-        <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
+        <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,0.3)" />
         </g>
         </svg>
         </div>

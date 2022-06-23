@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { getAllGenres, registerUser } from "./AuthManager";
 import "./Auth.css";
-import Header from "../../LoginLogo";
 
 // TODO: This should get you started on registering a new user.
 // Add new fields depending on your server side registration
@@ -56,9 +55,6 @@ export const ArtistRegister = () => {
 
   return (
     <main>
-      <div className="header">
-        <Header />{" "}
-      </div>
       <div className="header">
         {/* <!--Content before waves--> */}
 

@@ -14,7 +14,7 @@ p {
   font-family: 'Lato', sans-serif;
   letter-spacing: 1px;
   font-size:14px;
-  color: #333333;
+  color: #000000;
 }
 
 .header {
@@ -33,15 +33,17 @@ p {
 
 
 .inner-header {
-  height:50vh;
+  height:55vh;
   width:100%;
   margin: 0;
   padding: 0;
 }
 
 .login-inner-header {
+  display: flex;
+  flex-direction: column;
   height:40vh;
-  width:107%;
+  width:100%;
   margin: 0;
   padding: 0;
 }
@@ -56,7 +58,7 @@ p {
 .waves {
   position:relative;
   width: 100%;
-  height:15vh;
+  height: px;
   margin-bottom:-7px; /*Fix for safari gap*/
   min-height:100px;
   max-height:150px;
@@ -76,19 +78,19 @@ p {
 }
 .parallax > use:nth-child(1) {
   animation-delay: -2s;
-  animation-duration: 10s;
+  animation-duration: 15s;
 }
 .parallax > use:nth-child(2) {
   animation-delay: -3s;
-  animation-duration: 15s;
+  animation-duration: 20s;
 }
 .parallax > use:nth-child(3) {
   animation-delay: -4s;
-  animation-duration: 20s;
+  animation-duration: 25s;
 }
 .parallax > use:nth-child(4) {
   animation-delay: -5s;
-  animation-duration: 25s;
+  animation-duration: 30s;
 }
 @keyframes move-forever {
   0% {

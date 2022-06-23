@@ -7,9 +7,19 @@ export const NavBar = () => {
   return (
     <nav>
       <div className="navItems">
+      {JSON.parse(localStorage.getItem("is_artist")) === true ?
+      <>
+      <Link to="/artist-dashboard">DASHBOARD</Link>
+      <Link to="/musician-list">MUSICIANS</Link>
+      </>
+      :
+      <>
       <Link to="/musician-dashboard">DASHBOARD</Link>
       <Link to="/artist-list">ARTISTS</Link>
       <Link to="/gig-list">GIGS</Link>
+      </>
+      }
+      
       
       
 
