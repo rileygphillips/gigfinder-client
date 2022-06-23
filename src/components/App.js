@@ -3,10 +3,15 @@ import { Route, Redirect } from "react-router-dom"
 import { ApplicationViews } from "./ApplicationViews"
 import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
-import { Register } from "./auth/Register"
+import { ArtistRegister } from "./auth/ArtistRegister"
+import { MusicianRegister } from "./auth/MusicianRegister"
+import Header from "../LoginLogo"
 
 export const App = () => (
     <>
+    <div className="header">
+        <Header />{" "}
+      </div>
         <Route render={() => {
             if (localStorage.getItem("auth_token")) {
                 return <>
@@ -24,9 +29,15 @@ export const App = () => (
             <Login />
         </Route>
 
-        <Route path="/register">
-            <Register />
+        <Route path="/artistregister">
+            <ArtistRegister />
         </Route>
+
+        <Route path="/musicianregister">
+            <MusicianRegister />
+        </Route>
+
+    
 
     </>
 )
